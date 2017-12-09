@@ -24,30 +24,31 @@ android {
             }
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     // Support library
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-
     // Constraint layout
     implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta3'
-
     // Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     // ButterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-
     // Icepick
     implementation 'frankiesardo:icepick:3.2.0'
     annotationProcessor 'frankiesardo:icepick-processor:3.2.0'
+    // Sugar ORM
+    implementation 'com.github.satyan:sugar:1.5'
 }
